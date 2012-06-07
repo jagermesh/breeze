@@ -7,9 +7,15 @@ Shortly:
 - All functinality avaiable via (br) global.
 - So far it has no external dependencies (only within Breeze libs).
 
+Usage:
+
+```
+    <script src="js/breeze.min.js"></script>
+```
+
 ## br.storage - wrapper for HTML5 local/session storage
 
-Check some examples:
+Examples:
 
 ```
 console.log(br.storage.get('foo', 'bar'));
