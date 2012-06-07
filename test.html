@@ -11,23 +11,35 @@
 
       br.storage.clear();
 
+      console.log("br.storage.get('foo', 'bar')");
+      console.log(br.storage.get('foo', 'bar'));
+
+      console.log("br.storage.set('foo', 'bar2').get('foo')");
+      console.log(br.storage.set('foo', 'bar2').get('foo'));
+
+      console.log("br.storage.set('boolean', true).get('boolean')");
+      console.log(br.storage.set('boolean', true).get('boolean'));
+
+      console.log("br.storage.set('integer', 666).get('integer')");
+      console.log(br.storage.set('integer', 666).get('integer'));
+
       console.log("br.storage.set('val', 10).inc('val', 5).inc('val').get('val')");
       console.log(br.storage.set('val', 10).inc('val', 5).inc('val').get('val'));
 
       console.log("br.storage.set('val', 10).dec('val', 5).dec('val').get('val')");
       console.log(br.storage.set('val', 10).dec('val', 5).dec('val').get('val'));
 
+      console.log("br.storage.set('colors', 'red').inc('colors', 'white').inc('colors', 'blue').get('colors')");
+      console.log(br.storage.set('colors', 'red').inc('colors', 'white').inc('colors', 'blue').get('colors'));
+
+      console.log("br.storage.set('tags', 'storage').inc('tags', 'html5', ' ').inc('tags', 'local', ' ').get('tags')");
+      console.log(br.storage.set('tags', 'storage').inc('tags', 'html5', ' ').inc('tags', 'local', ' ').get('tags'));
+
       console.log("br.storage.clear().set('one', 1).set('two', 2).set('three', 3).get(['one', 'two', 'three'])");
       console.log(br.storage.clear().set('one', 1).set('two', 2).set('three', 3).get(['one', 'two', 'three']));
 
       console.log("br.storage.set('array', [1, 2, 3, 4, 5]).get('array')");
       console.log(br.storage.set('array', [1, 2, 3, 4, 5]).get('array'));
-
-      console.log("br.storage.get('foo', 'bar')");
-      console.log(br.storage.get('foo', 'bar'));
-
-      console.log("br.storage.set('foo', 'bar2').get('foo')");
-      console.log(br.storage.set('foo', 'bar2').get('foo'));
 
       console.log("br.storage.set({prop1: 'val1', prop2: 'val2' }).get('prop2')");
       console.log(br.storage.set({prop1: 'val1', prop2: 'val2' }).get('prop2'));
@@ -44,12 +56,6 @@
       console.log("br.storage.remove(['prop1', 'prop2']).get('prop1')");
       console.log(br.storage.remove(['prop1', 'prop2']).get('prop1'));
 
-      console.log("br.storage.set('boolean', true).get('boolean')");
-      console.log(br.storage.set('boolean', true).get('boolean'));
-
-      console.log("br.storage.set('integer', 666).get('integer')");
-      console.log(br.storage.set('integer', 666).get('integer'));
-
       console.log("br.storage.set('object', { prop1: 'one', prop2: 'two' }).get('object')");
       console.log(br.storage.set('object', { prop1: 'one', prop2: 'two' }).get('object'));
 
@@ -58,12 +64,6 @@
 
       console.log("br.storage.not('delicious').get('delicious')");
       console.log(br.storage.not('delicious').get('delicious'));
-
-      console.log("br.storage.set('colors', 'red').inc('colors', 'white').inc('colors', 'blue').get('colors')");
-      console.log(br.storage.set('colors', 'red').inc('colors', 'white').inc('colors', 'blue').get('colors'));
-
-      console.log("br.storage.set('tags', 'storage').inc('tags', 'html5', ' ').inc('tags', 'local', ' ').get('tags')");
-      console.log(br.storage.set('tags', 'storage').inc('tags', 'html5', ' ').inc('tags', 'local', ' ').get('tags'));
 
       console.log("br.storage.set('array', [1, 2, 3]).append('array', 4).get('array')");
       console.log(br.storage.set('array', [1, 2, 3]).append('array', 4).get('array'));
