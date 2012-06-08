@@ -15,6 +15,13 @@ Usage:
 
 ## br.storage - wrapper for HTML5 local/session storage
 
+Why?:
+
+- chaining, yep, neat jQuery thing
+- .inc for strings 
+- .append/.prepend/.takeLast/.takeFirst for arrays
+- .extend for objects
+
 There are two objects:
 
 - br.storage for local storage
