@@ -4,16 +4,21 @@ This repository will grow as soon as source code will be ready to be shared with
 
 Shortly:
 
-- All functinality avaiable via (br) global.
+- All functinality available via (br) global.
 - So far it has no external dependencies (only within Breeze libs).
 
 Usage:
 
 ```
-    <script src="js/breeze.min.js"></script>
+<script src="js/breeze.min.js"></script>
 ```
 
 ## br.storage - wrapper for HTML5 local/session storage
+
+There are two objects:
+
+- br.storage for local storage
+- br.session for session storage
 
 Examples:
 
