@@ -2,7 +2,11 @@
 <html>
   <head>
     <title>Breeze</title>
+    <script src="js/br.typecheck.js"></script>
+    <script src="js/br.storage.js"></script>
+<!--
     <script src="js/breeze.min.js"></script>
+-->      
   </head>
   <body>
     Check console log
@@ -47,9 +51,6 @@
       console.log("br.storage.remove('prop1').get('prop2')");
       console.log(br.storage.remove('prop1').get('prop2'));
       
-      console.log("br.storage.remove('prop1', 'prop2').get('prop1')");
-      console.log(br.storage.remove('prop1', 'prop2').get('prop1'));
-
       console.log("br.storage.set({prop1: 'val1', prop2: 'val2' }).get(['prop1', 'prop2'])");
       console.log(br.storage.set({prop1: 'val1', prop2: 'val2' }).get(['prop1', 'prop2']));
 
@@ -74,14 +75,50 @@
       console.log("br.storage.set('array', [1, 2, 3]).takeLast('array')");
       console.log(br.storage.set('array', [1, 2, 3]).takeLast('array'));
 
+      console.log("br.storage.get('array')");
+      console.log(br.storage.get('array'));
+
       console.log("br.storage.set('array', [1, 2, 3]).takeFirst('array')");
       console.log(br.storage.set('array', [1, 2, 3]).takeFirst('array'));
+
+      console.log("br.storage.get('array')");
+      console.log(br.storage.get('array'));
+
+      console.log("br.storage.set('array', [1, 2, 3]).getLast('array')");
+      console.log(br.storage.set('array', [1, 2, 3]).getLast('array'));
+
+      console.log("br.storage.get('array')");
+      console.log(br.storage.get('array'));
+
+      console.log("br.storage.set('array', [1, 2, 3]).getFirst('array')");
+      console.log(br.storage.set('array', [1, 2, 3]).getFirst('array'));
+
+      console.log("br.storage.get('array')");
+      console.log(br.storage.get('array'));
+
+      console.log("br.storage.getFirst('array2', 'aa')");
+      console.log(br.storage.getFirst('array2', 'aa'));
 
       console.log("br.storage.set('object', { prop1: 'one' }).extend('object', { prop2: 'two' }).get('object')");
       console.log(br.storage.set('object', { prop1: 'one' }).extend('object', { prop2: 'two' }).get('object'));
       
       console.log("br.storage.set('object', { prop1: 'one' }).extend('object', { prop2: 'two', prop3: 'three' }).get('object')");
       console.log(br.storage.set('object', { prop1: 'one' }).extend('object', { prop2: 'two', prop3: 'three' }).get('object'));
+
+      console.log("br.storage.set('array', [1, 2, 3]).each('array', function() { console.log(this); })");
+      br.storage.set('array', [1, 2, 3]).each('array', function(value) { console.log(value); });
+
+      console.log("br.storage.set('array', [1, 2, 3]).appendUnique('array', 1).appendUnique('array', 4).get('array')");
+      console.log(br.storage.set('array', [1, 2, 3]).appendUnique('array', 1).appendUnique('array', 4).get('array'));
+
+      console.log("br.storage.set('array', [1, 2, 3]).prependUnique('array', 1).prependUnique('array', 4).get('array')");
+      console.log(br.storage.set('array', [1, 2, 3]).prependUnique('array', 1).prependUnique('array', 4).get('array'));
+
+      console.log("br.storage.set('array', [1, 2, 3]).append('array', 4, 3).get('array')");
+      console.log(br.storage.set('array', [1, 2, 3]).append('array', 4, 3).get('array'));
+
+      console.log("br.storage.set('array', [1, 2, 3]).prepend('array', 4, 3).get('array')");
+      console.log(br.storage.set('array', [1, 2, 3]).prepend('array', 4, 3).get('array'));
 
       console.log("br.storage.all()");
       console.log(br.storage.all());

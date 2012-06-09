@@ -7,6 +7,14 @@ Shortly:
 - All functinality available via (br) global.
 - So far it has no external dependencies (only within Breeze libs).
 
+Most of modern browsers supported:
+
+- Internet Explorer 8+
+- Mozilla Firefox 3.5+
+- Google Chrome 4+
+- Safari 4+
+- Opera 10.5+
+
 Usage:
 
 ```
@@ -66,9 +74,6 @@ console.log(br.storage.set({prop1: 'val1', prop2: 'val2' }).get('prop2'));
 console.log(br.storage.remove('prop1').get('prop2'));
 // val2
 
-console.log(br.storage.remove('prop1', 'prop2').get('prop1'));
-// null
-
 console.log(br.storage.set({prop1: 'val1', prop2: 'val2' }).get(['prop1', 'prop2']));
 // { prop1: "val1",  prop2: "val2" }
 
@@ -93,14 +98,49 @@ console.log(br.storage.set('array', [1, 2, 3]).prepend('array', 4).get('array'))
 console.log(br.storage.set('array', [1, 2, 3]).takeLast('array'));
 // 3
 
+console.log(br.storage.get('array'));
+// [1, 2]
+
 console.log(br.storage.set('array', [1, 2, 3]).takeFirst('array'));
 // 1
+
+console.log(br.storage.get('array'));
+// [2, 3]
+
+console.log(br.storage.set('array', [1, 2, 3]).getLast('array'));
+// 3
+
+console.log(br.storage.get('array'));
+// [1, 2, 3]
+
+console.log(br.storage.set('array', [1, 2, 3]).getFirst('array'));
+// 1
+
+console.log(br.storage.get('array'));
+// [1, 2, 3]
 
 console.log(br.storage.set('object', { prop1: 'one' }).extend('object', { prop2: 'two' }).get('object'));
 // { prop1: "one", prop2: "two" }
 
 console.log(br.storage.set('object', { prop1: 'one' }).extend('object', { prop2: 'two', prop3: 'three' }).get('object'));
 // { prop1: "one", prop2: "two", prop3: "three" }
+
+br.storage.set('array', [1, 2, 3]).each('array', function(value) { console.log(value); });
+// 1
+// 2
+// 3
+
+console.log(br.storage.set('array', [1, 2, 3]).appendUnique('array', 1).appendUnique('array', 4).get('array'));
+// [2, 3, 1, 4] 
+
+console.log(br.storage.set('array', [1, 2, 3]).prependUnique('array', 1).prependUnique('array', 4).get('array'));
+// [4, 1, 2, 3] 
+
+console.log(br.storage.set('array', [1, 2, 3]).append('array', 4, 3).get('array'));
+// [2, 3, 4]
+
+console.log(br.storage.set('array', [1, 2, 3]).prepend('array', 4, 3).get('array'));
+// [4, 1, 2]
 
 console.log(br.storage.all());
 // { array: [2, 3]
