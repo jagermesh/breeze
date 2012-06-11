@@ -84,7 +84,7 @@
       } else {        
         var result = _helper.unpack(_storage.getItem(key));
       }
-      return br.isEmpty(result) ? (br.isEmpty(defaultValue) ? result : defaultValue) : result;
+      return br.isEmpty(result) ? (br.isNull(defaultValue) ? result : defaultValue) : result;
     }
 
     this.set = function(key, value) {
@@ -214,7 +214,7 @@
           }
         }
       }
-      return br.isEmpty(result) ? (br.isEmpty(defaultValue) ? result : defaultValue) : result;
+      return br.isEmpty(result) ? (br.isNull(defaultValue) ? result : defaultValue) : result;
    }
 
     this.getLast = function(key, defaultValue) {
@@ -236,7 +236,7 @@
           }
         }
       }
-      return br.isEmpty(result) ? (br.isEmpty(defaultValue) ? result : defaultValue) : result;
+      return br.isEmpty(result) ? (br.isNull(defaultValue) ? result : defaultValue) : result;
     }
 
     this.getFirst = function(key, defaultValue) {
