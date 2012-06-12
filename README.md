@@ -157,3 +157,14 @@ console.log(br.storage.all());
 // }
 
 ```
+
+## Need IE6/7+?
+
+Use json2 polyfill <a href="https://github.com/douglascrockford/JSON-js">https://github.com/douglascrockford/JSON-js</a> by linking it to your page:
+
+```
+<!--[if lt IE 8]>
+  <script src="js/json2.js"></script>
+<![endif]-->
+```
+
